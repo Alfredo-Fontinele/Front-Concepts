@@ -17,7 +17,6 @@ interface DataProps {
 
 export default function FormComponent() {
   const [checkboxStatus, setCheckBoxStatus] = useState(false)
-  const [phone, setPhone] = useState("")
 
   const FormSchema = yup.object({
     name: yup.string().required("Nome Obrigatório"),
