@@ -2,20 +2,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-If you have Docker:
+```bash
 
-````bash
-docker compose up
-``
+If you have Docker
+
+- docker compose up
 
 Or, you can run the development server:
 
-```bash
-npm install && npm run dev
+- npm install && npm run dev
 # or
-yarn && yarn dev
+- yarn && yarn dev
 # or
-pnpm i && pnpm dev
+- pnpm i && pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
