@@ -48,7 +48,7 @@ export default function FormComponent() {
   })
 
   const onSubmitForm = (data: DataProps) => {
-    const newData = { ...data, club_name: data.club_name, checkboxStatus }
+    const newData = { ...data, club_name: `${data.club_name}.plyr.me`, checkboxStatus }
     console.log(newData)
   }
 
