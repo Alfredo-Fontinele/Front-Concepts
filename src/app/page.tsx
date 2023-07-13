@@ -30,7 +30,7 @@ export default function Home() {
           <Flex w={"60%"}>
             <Image
               style={{
-                height: "100vh",
+                minHeight: "100vh",
                 width: "100%",
               }}
               src={BackgroundImg}
