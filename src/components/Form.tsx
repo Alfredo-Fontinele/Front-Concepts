@@ -1,10 +1,11 @@
 import PlyrmeImg from "@/assets/Plyrme.png"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { Anchor, Button, Checkbox, Grid, Text, TextInput } from "@mantine/core"
+import { Anchor, Button, Checkbox, Grid, Text } from "@mantine/core"
 import Image from "next/image"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
+import InputComponent from "./Input"
 
 interface DataProps {
   name: string
@@ -48,7 +49,11 @@ export default function FormComponent() {
   })
 
   const onSubmitForm = (data: DataProps) => {
-    const newData = { ...data, club_name: `${data.club_name}.plyr.me`, checkboxStatus }
+    const newData = {
+      ...data,
+      club_name: `${data.club_name}.plyr.me`,
+      checkboxStatus,
+    }
     console.log(newData)
   }
 
@@ -61,7 +66,7 @@ export default function FormComponent() {
         justifyContent: "center",
         alignItems: "flex-start",
         gap: 20,
-        padding: 40,
+        padding: 30,
         minHeight: "100vh",
         maxWidth: "700px",
       }}
@@ -78,60 +83,57 @@ export default function FormComponent() {
       </Text>
       <Grid>
         <Grid.Col span={12}>
-          <TextInput
+          <InputComponent
             label="Name"
             placeholder="Digite seu nome"
-            error={errors.name && errors.name.message}
-            mt="sm"
-            {...register("name")}
+            error={errors}
+            register={register}
+            registeredValue="name"
           />
         </Grid.Col>
         <Grid.Col span={7}>
-          <TextInput
-            label="Email"
+          <InputComponent
+            label={"Email"}
             placeholder="Digite seu email"
-            error={errors.email && errors.email.message}
-            mt="sm"
-            {...register("email")}
+            error={errors}
+            register={register}
+            registeredValue="email"
           />
         </Grid.Col>
         <Grid.Col span={5}>
-          <TextInput
+          <InputComponent
             label="Celular"
             placeholder="(00) 00000-0000"
-            mt="sm"
-            error={errors.phone && errors.phone.message}
-            {...register("phone")}
+            error={errors}
+            register={register}
+            registeredValue="phone"
           />
         </Grid.Col>
-
         <Grid.Col span={5}>
-          <TextInput
+          <InputComponent
             label="Senha"
             placeholder="Digite sua senha"
-            error={errors.password && errors.password.message}
-            mt="sm"
-            {...register("password")}
+            error={errors}
+            register={register}
+            registeredValue="password"
           />
         </Grid.Col>
-
         <Grid.Col span={7}>
-          <TextInput
+          <InputComponent
             label="Confirmar Senha"
             placeholder="Confirme sua senha"
-            error={errors.confirm_password && errors.confirm_password.message}
-            mt="sm"
-            {...register("confirm_password")}
+            error={errors}
+            register={register}
+            registeredValue="confirm_password"
           />
         </Grid.Col>
-
         <Grid.Col span={10}>
-          <TextInput
+          <InputComponent
             label="Nome do seu clube"
             placeholder="Digite o nome do seu clube"
-            error={errors.club_name && errors.club_name.message}
-            mt="sm"
-            {...register("club_name")}
+            error={errors}
+            register={register}
+            registeredValue="club_name"
           />
         </Grid.Col>
         <Grid.Col span={2}>
